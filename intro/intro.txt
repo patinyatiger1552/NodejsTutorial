@@ -1,0 +1,6 @@
+คำศัพท์พื้นฐาน Node.js (Back-end)
+
+Server = ผู้ให้บริการ
+Client = ผู้ใช้บริการ
+Request = คำขอในการเข้าถึง
+Response = ตอบกลับคำขอ

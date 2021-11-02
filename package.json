@@ -1,0 +1,19 @@
+{
+  "name": "nodejstutorial",
+  "version": "1.0.0",
+  "description": "nodejs for beginner",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "nodejstutorial"
+  },
+  "author": "bushidoDev",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
