@@ -1,22 +1,21 @@
-const http = require('http');
-const fs = require('fs');
+const express = require('express')
+const path = require('path')
+const app = express()
 
-const indexPage = fs.readFileSync(`${__dirname}/webpages/index.html`,'utf-8')
-const productPage = fs.readFileSync(`${__dirname}/webpages/product.html`,'utf-8')
+//อ้างอิงตำแหน่งไฟล์
 
-const server = http.createServer((req,res)=>{
-  const pathName = req.url
-  console.log("url = ", pathName)
-  if(pathName === "/" || pathName === "/home"){
-    res.end(indexPage)
-  }else if (pathName === "/product"){
-    res.end(productPage)
-  }else{
-    res.writeHead(404)
-    res.end("<h1>Not Found</h1>")
-  }
+app.get("/",(req,res) => {
+  res.status(200)
+  res.type('text/html')
+  res.sendFile(path.join(__dirname, "templates/index.html"))
 })
 
-server.listen(3000,'localhost',()=>{
-  console.log("Start server post 3000")
+app.get("/product",(req,res) => {
+  res.sendFile(path.join(__dirname,"templates/product1.html"))
+  res.sendFile(path.join(__dirname,"templates/product2.html"))
+  res.sendFile(path.join(__dirname,"templates/product3.html"))
+})
+
+app.listen(8080,()=>{
+  console.log("Run server port 8080")
 })
